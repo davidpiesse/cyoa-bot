@@ -18,4 +18,13 @@ class Page extends Model
     public function actions(){
         return $this->hasMany(Action::class);
     }
+
+    public function reply_markup(){
+        //convert actions to replay markup item
+         return \Telegram::replyKeyboardMarkup([
+            'keyboard' => PageBuilder::convertActionsToButtons($this->actions),
+            'resize_keyboard' => true,
+            'one_time_keyboard' => true
+        ]);
+    }
 }

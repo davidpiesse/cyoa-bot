@@ -18,7 +18,7 @@ class CreateActionsTable extends Migration
             $table->string('action_id');
             $table->string('name');
             $table->string('description'); //maybe
-            $table->enum('type',['move','back','wait','end','start','input','option','update']);
+            $table->enum('type',['go','back','wait','end','start','input','option','update']);
             $table->text('parameters'); //for storing info if required
             $table->text('keyboard'); //for storing keyboard setup
             $table->integer('page_id')->unsigned();

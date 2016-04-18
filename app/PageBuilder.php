@@ -31,7 +31,7 @@ class PageBuilder
         return $result;
     }
 
-    private static function convertActionsToButtons($actions)
+    public static function convertActionsToButtons($actions)
     {
         $result = [];
         //single row each - limit to 5?

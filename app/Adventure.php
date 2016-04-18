@@ -23,4 +23,11 @@ class Adventure extends Model
     public function last_action(){
         return Action::find($this->last_action);
     }
+
+    public static function current($update){
+        return Adventure::where('telegram_chat_id',$update->getMessage()->getChat()->getId())
+            ->where('active',true)
+            ->where('complete',false)
+            ->first();
+    }
 }

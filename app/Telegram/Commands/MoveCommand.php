@@ -15,5 +15,7 @@ class MoveCommand extends Command
     {
         //the argument has the action name
         $this->replyWithMessage(['text'=>'You went '.$arguments]);
+//        /parse this with the update object
+
     }
 }

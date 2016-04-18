@@ -24,4 +24,16 @@ class Helpers{
             'one_time_keyboard' => true
         ]);
     }
+
+    public static function getCurrentPage($update,$action){
+        //get current page from update
+        $adventure = Adventure::current($update);
+        $was_current_page = $adventure->current_page;
+
+        $adventure->last_page = $was_current_page;
+        //convert action to a specific action
+
+        $adventure->save();
+    }
+
 }
