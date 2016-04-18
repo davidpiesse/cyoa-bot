@@ -6,7 +6,13 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.2.*"
+        "laravel/framework": "5.2.*",
+        "barryvdh/laravel-debugbar": "^2.2",
+        "doctrine/dbal": "^2.5",
+        "sofa/eloquence": "^5.2",
+        "irazasyed/telegram-bot-sdk": "^2.0",
+        "pda/pheanstalk": "^3.1",
+        "barryvdh/laravel-ide-helper": "^2.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
