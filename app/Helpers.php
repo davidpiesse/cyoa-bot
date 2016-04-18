@@ -25,16 +25,3 @@ class Helpers{
         ]);
     }
 }
-
-class PageBuilder{
-
-    public static function build(Page $page){
-//        build a reply message object
-        $result = [];
-        $result['text'] = "*".$page->title."*".PHP_EOL;
-        $result['text'] .= $page->content;
-        //get actions
-        //build keyboard
-        return $result;
-    }
-}
