@@ -11,6 +11,11 @@
 |
 */
 
+
+Route::post('/webhook',['as'=>'webkook.index','uses' => 'WebhookController@webhook']);
+Route::get('/webhook/register',['as'=>'webhook.register','uses' => 'WebhookController@register']);
+Route::get('/webhook/remove',['as'=>'webhook.remove','uses' => 'WebhookController@remove']);
+
 Route::get('/', function () {
     return view('welcome');
 });
