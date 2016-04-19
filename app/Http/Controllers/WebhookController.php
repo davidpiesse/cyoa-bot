@@ -16,6 +16,7 @@ class WebhookController extends Controller
     {
         //entry point for all chats / stories
         $update = Telegram::commandsHandler(true);
+        //initial checks?
 
         Log::info('Webhook Received:' . json_encode($update));
         return 'OK';

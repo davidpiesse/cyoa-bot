@@ -23,7 +23,7 @@ class SelectStoryCommand extends Command
             ->where('complete',false)
             ->first();
         if($adventure == null) {
-            $this->replyWithMessage(['text' => "Select a story from the list below"]);
+            $this->replyWithMessage(['text' => "Choose a story from the list below"]);
             //get a list of stories from the db - max 10 - new / popular etc.
             $list = "";
             $id_array = "";

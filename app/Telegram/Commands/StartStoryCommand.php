@@ -38,7 +38,6 @@ class StartStoryCommand extends Command
                 $first_page = $adventure->story()->first_page();
 //                $this->replyWithMessage(['text'=>json_encode($first_page)]);
                 $this->replyWithMessage(PageBuilder::build($first_page));
-
             } else {
                 $this->replyWithMessage(['text' => "Oops, I couldn't find that story"]);
             }

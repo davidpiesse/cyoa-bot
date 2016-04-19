@@ -2,8 +2,12 @@
 
 namespace App;
 
-class Helpers{
-    public static function makeKeyboard($values = []){
+use Telegram\Bot\Objects\Update;
+
+class Helpers
+{
+    public static function makeKeyboard($values = [])
+    {
         //split into rows
 //        if(count($values) == 2){
 //
@@ -25,7 +29,8 @@ class Helpers{
         ]);
     }
 
-    public static function getCurrentPage($update,$action){
+    public static function getCurrentPage($update, $action)
+    {
         //get current page from update
         $adventure = Adventure::current($update);
         $was_current_page = $adventure->current_page;
@@ -36,4 +41,9 @@ class Helpers{
         $adventure->save();
     }
 
+    public static function getChatID(Update $update)
+    {
+        return $update->getMessage()->getChat()->getId();
+    }
+       
 }

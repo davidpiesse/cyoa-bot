@@ -17,8 +17,6 @@ class StartCommand extends Command
     public function handle($arguments)
     {
         $this->replyWithChatAction(['action' => Actions::TYPING]);
-        //give a list of potential options - based on if they are in a story already
-
         //check if argument has a value already
         if ($arguments == 'again') {
             //delete all adventures where chat_id is current
@@ -37,7 +35,6 @@ class StartCommand extends Command
                 ->where('active',true)
                 ->where('complete',false)
                 ->first();
-
             if ($adventure == null) {
                 //new adventure
                 $this->replyWithMessage(['text' => "Let's begin your latest quest! /selectstory"]);
@@ -45,7 +42,5 @@ class StartCommand extends Command
                 $this->replyWithMessage(['text' => "You have already started a story. Do you want to quit this and start again?", 'reply_markup' => Helpers::makeKeyboard(['/start again', '/start ignore'])]);
             }
         }
-
-//        Log::info('Start : ' . json_encode($arguments));
     }
 }
